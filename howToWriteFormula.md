@@ -1,29 +1,17 @@
-### 如何在Github上写公式
+### 如何在Github上输入Latex公式
 
-ZT: http://cwiki.apachecn.org/pages/viewpage.action?pageId=8159393
+注意：公式中的”\\“符号，要用”\\\“代替
 
-- 使用MathJax引擎
-    - 在Markdown中添加MathJax引擎。`<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>`
-    - 然后，再使用Tex写公式。
-        - $$公式$$表示行间公式，本来Tex中使用\(公式\)表示行内公式，但因为Markdown中\是转义字符，所以在Markdown中输入行内公式使用\\(公式\\)，如下代码：
-            - `$$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$`
-            - `\\(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\\)`
+- 使用[codecogs公式在线编辑器](http://www.codecogs.com/latex/eqneditor.php)
 
+    - 格式：
 
-测试案例：
+        `http://latex.codecogs.com/gif.latex?在这里输入公式`
 
-### 机器学习-如何在github上写数学公式
+    - 示例：
 
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+        ![公式](http://latex.codecogs.com/gif.latex?x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a})
 
-居中格式: $$xxx$$
-$$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
-靠左格式: \\(xxx\\)
-\\(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\\)
+- test
 
-测试
-$$\frac{7x+5}{1+y^2}$$
-\\(l(x_i) = - \log_2 P(x_i)\\)
-
-
-![公式](http://latex.codecogs.com/gif.latex?x=abc+abb)
+    ![公式](http://latex.codecogs.com/gif.latex?x=abc+abb)
