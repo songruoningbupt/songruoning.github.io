@@ -6,12 +6,12 @@
 
     - sigmoid函数
 
-        ![formula1](http://latex.codecogs.com/gif.latex?f(z)=\frac{1}{1+exp(-z)})
+            ![formula1](http://latex.codecogs.com/gif.latex?f(z)=\frac{1}{1+exp(-z)})
 
         - sigmoid函数的图像，sigmoid函数的取值范围是[0,1]
 
-        ![image](http://deeplearning.stanford.edu/wiki/images/thumb/c/ca/Sigmoid_Function.png/800px-Sigmoid_Function.png)
+            ![image](http://deeplearning.stanford.edu/wiki/images/thumb/c/ca/Sigmoid_Function.png/800px-Sigmoid_Function.png)
 
         - sigmoid函数的导数就是
 
-        ![formula2](http://latex.codecogs.com/gif.latex?{f}'(z)=f(z)(1-f(z)))
+            ![formula2](http://latex.codecogs.com/gif.latex?{f}'(z)=f(z)(1-f(z)))
