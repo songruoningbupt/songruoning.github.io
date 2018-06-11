@@ -14,4 +14,6 @@
 
 - test
 
+    `http://latex.codecogs.com/gif.latex?x=abc+abb`
+
     ![公式](http://latex.codecogs.com/gif.latex?x=abc+abb)
