@@ -24,3 +24,6 @@ $$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
 测试
 $$\frac{7x+5}{1+y^2}$$
 \\(l(x_i) = - \log_2 P(x_i)\\)
+
+
+http://latex.codecogs.com/gif.latex?x=abc+abb
