@@ -19,4 +19,4 @@ we’ll start disabling the following:
 
 解决办法：升级GIT至最新版，重新配置SourceTree和Intellij IDEA的GIT配置
 
-[home](README.md)
+[home](https://github.com/songruoningbupt/songruoningbupt.github.io)
