@@ -23,7 +23,7 @@ we’ll start disabling the following:
 
 Setting -> Python Concole
 
-![图片](https://github.com/songruoningbupt/songruoningbupt.github.io/image/pythonInIntellijIdea.png)
+![图片](songruoningbupt.github.io/image/pythonInIntellijIdea.png)
 
 
 ----------------------------------
