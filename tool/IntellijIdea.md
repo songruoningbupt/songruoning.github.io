@@ -19,4 +19,13 @@ we’ll start disabling the following:
 
 解决办法：升级GIT至最新版，重新配置SourceTree和Intellij IDEA的GIT配置
 
+### 在IntellijIdea中配置Python
+
+Setting -> Python Concole
+
+![图片](https://github.com/songruoningbupt/songruoningbupt.github.io/image/pythonInIntellijIdea.png)
+
+
+----------------------------------
+
 [home](https://github.com/songruoningbupt/songruoningbupt.github.io)
