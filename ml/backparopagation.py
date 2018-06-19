@@ -38,6 +38,7 @@ class NeuralNetwork:
         self.init_weights_from_inputs_to_hidden_layer_neurons(hidden_layer_weights)
         self.init_weights_from_hidden_layer_neurons_to_output_layer_neurons(output_layer_weights)
 
+    # 初始化权重
     def init_weights_from_inputs_to_hidden_layer_neurons(self, hidden_layer_weights):
         weight_num = 0
         for h in range(len(self.hidden_layer.neurons)):
@@ -70,7 +71,9 @@ class NeuralNetwork:
         print('------')
 
     def feed_forward(self, inputs):
+        # 计算隐藏层的输出
         hidden_layer_outputs = self.hidden_layer.feed_forward(inputs)
+        # 计算输出层的输出
         return self.output_layer.feed_forward(hidden_layer_outputs)
 
     # Uses online learning, ie updating the weights after each training case
@@ -179,7 +182,7 @@ class Neuron:
 
     # Apply the logistic function to squash the output of the neuron
     # The result is sometimes referred to as 'net' [2] or 'net' [1]
-    # 逻辑回归
+    # sigmoid函数
     def squash(self, total_net_input):
         return 1 / (1 + math.exp(-total_net_input))
 
