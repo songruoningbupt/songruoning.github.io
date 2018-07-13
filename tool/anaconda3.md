@@ -12,3 +12,13 @@
 - 安装Pycharm
 - 在Pycharm的File>>settings>>Project Interpreter>>Add local  里面添加Anaconda python.exe. 应用之后就可以调用各种Anaconda的库啦
 - 配置完pycharm调用Anaconda后，可以快乐的在pycharm里面调用各种科学计算库
+
+### 安装LabelMe
+
+- 打开anaconda prompt
+- 执行conda create --name=labelme python=3.6 （这一步python=*选择自己的Python版本），遇到Proceed([y]/n)?时，输入y
+- activate labelme
+- conda install pyqt, 遇到Proceed([y]/n)?时，输入y
+- pip install labelme
+
+![image](https://github.com/songruoningbupt/songruoningbupt.github.io/blob/master/image/labelme.png)
