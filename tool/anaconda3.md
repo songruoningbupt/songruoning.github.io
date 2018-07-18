@@ -21,4 +21,10 @@
 - conda install pyqt, 遇到Proceed([y]/n)?时，输入y
 - pip install labelme
 
+### 打开LabelMe
+- activate labelme
+- labelme
+
 ![image](https://github.com/songruoningbupt/songruoningbupt.github.io/blob/master/image/labelme.png)
+
+囊性或几乎完全囊性,宽度大于高度,低回声,光滑,大片钙化
