@@ -2,9 +2,11 @@
 
 ### 基本IO操作
 
+*自己的[code](https://github.com/songruoningbupt/songruoningbupt.github.io/blob/master/code/learning_opencv_3_computer_vision_with_python/io.py)*
+
 #### 读写图像文件
 
-- imread()和imwrite()能支持各种静态文件格式 *在[python code](https://github.com/songruoningbupt/thyroid_nodule/blob/master/code/src/preprocess/read_xml.py)中有尝试*
+- imread()和imwrite()能支持各种静态文件格式
     - 可以读一种格式的，然后存成其他格式的
     - 默认情况下，imread会返回BGR格式的图像，下面的参数可以作为选项
         - IMREAD_ANYCOLOR = 4
