@@ -7,6 +7,7 @@ learning_opencv_3_computer_vision_with_python_chapter_2
 
 import cv2
 import numpy
+import os
 
 
 def read_image(file):
@@ -59,8 +60,31 @@ def numpy_image():
     show_image(img)
 
 
+def image_to_array():
+    img = numpy.zeros((300, 300), dtype=numpy.uint8)
+    print(img)
+    img[100, 100] = 255
+    show_image(img)
+    img = numpy.zeros((300, 300), dtype=numpy.uint8)
+    img = cv2.cvtColor(img, cv2.COLOR_GRAY2BGR)
+    img[100, 100, 0] = 255
+    print(img[100,100])
+    show_image(img)
+
+
+def random_image():
+    randomByteArray = bytearray(os.urandom(120000))
+    flatNumpyArray = numpy.array(randomByteArray)
+    grayImage = flatNumpyArray.reshape(300, 400)
+    show_image(grayImage)
+    bgrImage = flatNumpyArray.reshape(100, 400, 3)
+    show_image(bgrImage)
+
+
 if __name__ == '__main__':
     print("learning_opencv_3_computer_vision_with_python_chapter_2")
     image_file = "../../image/thyroid/1_1_label.jpg"
-    read_image(image_file)
+    # read_image(image_file)
     # numpy_image()
+    # image_to_array()
+    random_image()
