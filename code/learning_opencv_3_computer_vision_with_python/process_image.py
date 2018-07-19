@@ -116,16 +116,49 @@ def scharr_process(file):
     cv2.imshow("absY", absY)
     cv2.imshow("Result", dst)
     cv2.imshow("image", image)
-    # cv2.imshow("medianBlur", medianBlur)
+    cv2.waitKey()
+    cv2.destroyAllWindows()
+
+
+def canny_process(file):
+    # Canny边缘检测
+    print("[INFO] read_image_file: " + file)
+    image = cv2.imread(file, 0)
+    print(image)
+    #    cv2.imwrite("../../image/learning_opencv_3_computer_vision_with_python/test_canny.jpg", cv2.Canny(image, 200, 300))
+    cv2.imshow("Canny", cv2.Canny(image, 80, 300))
+    cv2.imshow("image", image)
+    cv2.waitKey()
+    cv2.destroyAllWindows()
+
+
+def contour_process(file):
+    # 轮廓检测
+    print("[INFO] read_image_file: " + file)
+    # image = numpy.zeros((200, 200), dtype=numpy.uint8)
+    # image[50:150, 50:150] = 255
+    image = cv2.imread(file, 0)
+    ret, thresh = cv2.threshold(image, 127, 255, 0)
+    # findContours()有三个参数：输入图像、层次类型和轮廓逼近方法
+    #
+    img, contours, hierarchy = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    color = cv2.cvtColor(img, cv2.COLOR_GRAY2BGR)
+    image = cv2.drawContours(color, contours, -1, (0, 255, 0), 2)
+
+    # cv2.imwrite("../../image/learning_opencv_3_computer_vision_with_python/test_contour.jpg", image)
+    cv2.imshow("image", image)
     cv2.waitKey()
     cv2.destroyAllWindows()
 
 
 if __name__ == '__main__':
-    print("learning_opencv_3_computer_vision_with_python_chapter_2")
+    print("learning_opencv_3_computer_vision_with_python_chapter_3")
     image_file = "../../image/test.jpg"
+    image_file = "../../image/1_1.jpg"
     # hpf_image(image_file)
     # blur_image(image_file)
     # laplacian_process(image_file)
     # sobel_process(image_file)
-    scharr_process(image_file)
+    # scharr_process(image_file)
+    # canny_process(image_file)
+    contour_process(image_file)
