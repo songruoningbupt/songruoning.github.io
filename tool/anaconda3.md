@@ -27,4 +27,8 @@
 
 ![image](https://github.com/songruoningbupt/songruoningbupt.github.io/blob/master/image/labelme.png)
 
-囊性或几乎完全囊性,宽度大于高度,低回声,光滑,大片钙化
+### 配置TensorFlow
+
+- 可以像labelme一样通过anaconda去解决
+- 我直接在PyCharm中解决，这样方便，不需要每次都通过activate来切换环境
+    -
