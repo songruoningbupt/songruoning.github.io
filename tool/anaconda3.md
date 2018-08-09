@@ -31,4 +31,16 @@
 
 - 可以像labelme一样通过anaconda去解决
 - 我直接在PyCharm中解决，这样方便，不需要每次都通过activate来切换环境
-    -
+    - 在Pycharm的File>>settings>>Project Interpreter>>Add local  里面配置Conda Environment中的conda.exe为对应Anaconda的conda.exe文件
+        ![image](https://github.com/songruoningbupt/songruoningbupt.github.io/blob/master/image/condaenvironment.png)
+    - Apply之后，就可以添加tensorflow的Package
+        ![image](https://github.com/songruoningbupt/songruoningbupt.github.io/blob/master/image/tensorflowPackage.png)
+    - 测试Tensorflow
+        ```
+            import tensorflow as tf
+            hello = tf.constant("Hello!TensorFlow")
+            sess = tf.Session()
+            print(sess.run(hello))
+        ```
+        ![image](https://github.com/songruoningbupt/songruoningbupt.github.io/blob/master/image/tensorflowtest.png)
+
