@@ -2,6 +2,8 @@
 
 *20180713，因为要做一些python的工作，所以要在windows搭建一套anaconda3 + pycharm的开发环境*
 
+*20180809，在PyCharm中配置了tensorflow的使用*
+
 - anaconda
     - Conda是一个开源的包、环境管理器，可以用于在同一个机器上安装不同版本的软件包及其依赖，并能够在不同的环境之间切换
     - Anaconda包括Conda、Python以及一大堆安装好的工具包，比如：numpy、pandas等
