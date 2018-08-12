@@ -153,12 +153,19 @@ def contour_process(file):
 
 if __name__ == '__main__':
     print("learning_opencv_3_computer_vision_with_python_chapter_3")
-    image_file = "../../image/test.jpg"
-    image_file = "../../image/1_1.jpg"
+    image_file = "E:/BaiduYunDownload/ADEChallengeData2016/ADEChallengeData2016/annotations/training/ADE_train_00006930.png"
+    image = cv2.imread(image_file)
+    print(image)
+    print(numpy.max(image))
+    cv2.imshow("image", image)
+    cv2.waitKey()
+    cv2.destroyAllWindows()
+    # image_file = "../../image/test.jpg"
+    # image_file = "../../image/1_1.jpg"
     # hpf_image(image_file)
     # blur_image(image_file)
     # laplacian_process(image_file)
     # sobel_process(image_file)
     # scharr_process(image_file)
     # canny_process(image_file)
-    contour_process(image_file)
+    # contour_process(image_file)
