@@ -1,6 +1,6 @@
 ### FCN/TensorFlow
 
-*参考 https://blog.csdn.net/MOU_IT/article/details/81073149 ，代码来自 https://github.com/shekkizh/FCN.tensorflow ，自己开始一点点在Jupyter上试*
+*参考 https://blog.csdn.net/MOU_IT/article/details/81073149 ，代码来自 https://github.com/shekkizh/FCN.tensorflow ，自己开始一点点在Jupyter上试，20180813对visualize模式进行了试验*
 
 *数据 The model was applied on the Scene Parsing Challenge dataset provided by MIT http://sceneparsing.csail.mit.edu/ ，数据说明 https://github.com/CSAILVision/sceneparsing#overview-of-scene-parsing-benchmark ，数据和模型如果不提前下载，程序里也会下载*
 
