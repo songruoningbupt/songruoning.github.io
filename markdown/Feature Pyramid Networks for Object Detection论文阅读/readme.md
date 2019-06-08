@@ -5,7 +5,7 @@ Feature Pyramid Networks for Object Detection论文阅读
 特征金字塔**Feature pyramids**是用于检测不同尺度的对象的识别系统中的基本组件。 但是最近的深度学习对象检测器已经避免了金字塔表示，部分原因是它们是计算和内存密集型**compute and memory intensive**的。 在本文中，我们利用深层卷积网络固有的多尺度金字塔层次结构来构造具有边际额外成本**marginal extra cost**的特征金字塔。 开发了具有横向连接的自上而下架构，用于在所有尺度上构建高级语义特征图。 这种称为特征金字塔网络**Feature Pyramid Network**（FPN）的体系结构在几个应用程序中作为通用特征提取器显示出显着的改进。
 
 # 介绍
-Recognizing objects at vastly different scales is a fundamental challenge in computer vision. 
+Recognizing objects at vastly different scales is a fundamental challenge in computer vision.
 
 ![image](./企业微信截图_20190608103312.jpg)
 
@@ -16,3 +16,4 @@ featurizing each level有局限性：推理时间**Inference time**大幅增加�
 
 图像金字塔不是计算多尺度特征表示的唯一方法。深层ConvNet逐层计算特征层次结构，对于子采样层，特征层次结构具有固有的多尺度，金字塔形状。这种网内特征层次结构产生不同空间分辨率的特征图，但引入了由不同深度引起的大的语义间隙。 高分辨率地图具有低级别的特征，这些特征会损害其对象识别的表征能力。
 
+单次检测器（SSD）是使用ConvNet的金字塔特征层次结构的第一次尝试之一，就好像它是一个特征化的图像金字塔（图1（c））。 理想情况下，SSD式金字塔将重复使用前向传递中计算的不同层的多尺度特征图，从而免费。 但为了避免使用低级功能，SSD放弃重新使用已经计算的层，而是从网络中的高位开始构建金字塔（例如，VGG网络的conv4-3），然后再添加几个新层。 因此，它错过了重用特征层次结构的更高分辨率地图的机会。 我们证明这些对于检测小物体很重要。
