@@ -16,20 +16,20 @@ featurizing each level有局限性：推理时间**Inference time**大幅增加�
 
 单次检测器（SSD）是使用ConvNet的金字塔特征层次结构的第一次尝试之一，就好像它是一个特征化的图像金字塔（图1（c））。 理想情况下，SSD式金字塔将重复使用前向传递中计算的不同层的多尺度特征图，从而免费。 但为了避免使用低级功能，SSD放弃重新使用已经计算的层，而是从网络中的高位开始构建金字塔（例如，VGG网络的conv4-3），然后再添加几个新层。 因此，它错过了重用特征层次结构的更高分辨率地图的机会。 我们证明这些对于检测小物体很重要。
 
-![image](https://github.com/songruoningbupt/songruoningbupt.github.io/tree/master/markdown/Feature%20Pyramid%20Networks%20for%20Object%20Detection/企业微信截图_20190608103312.jpg)
+![image](https://raw.githubusercontent.com/songruoningbupt/songruoningbupt.github.io/master/markdown/Feature%20Pyramid%20Networks%20for%20Object%20Detection/企业微信截图_20190608103312.jpg)
 
 本文的目的是自然地利用ConvNet特征层次结构的金字塔形状，同时创建一个在所有尺度上都具有强大语义的特征金字塔。 为了实现这一目标，我们依靠一种架构，该架构将低分辨率，语义强大的特征与高分辨率，语义上较弱的特征相结合，通过自上而下的路径和横向连接(图1(d))。
 
 采用自上而下和跳过连接的类似架构在最近的研究中很受欢迎[28,17,8,26]。 他们的目标是制作一个精确分辨率的高级特征图，并在其上进行预测（图2上图）。 相反，我们的方法利用该体系结构作为特征金字塔，其中预测（例如，对象检测）在每个级别上独立地进行（图2底部）。我们的模型回应了一个特色图像金字塔，它具有在这些作品中没有被探索过。
 
-![image](https://github.com/songruoningbupt/songruoningbupt.github.io/tree/master/markdown/Feature%20Pyramid%20Networks%20for%20Object%20Detection/top-down.jpg)
+![image](https://raw.githubusercontent.com/songruoningbupt/songruoningbupt.github.io/master/markdown/Feature%20Pyramid%20Networks%20for%20Object%20Detection/top-down.jpg)
 
 # Related Work
 # FPN
 
 我们的目标是利用ConvNet的金字塔特征层次结构，该层次结构具有从低级到高级的语义，并构建一个具有高级语义的特征金字塔。 由此产生的特征金字塔网络是通用的，在本文中我们主要关注滑动窗口提议器(Region Proposal Network，简称RPN)和基于区域的探测器(Fast R-CNN)。 我们还将FPN概括为Sec6中的实例分割。
 
-![image](https://github.com/songruoningbupt/songruoningbupt.github.io/tree/master/markdown/Feature%20Pyramid%20Networks%20for%20Object%20Detection/building-block.jpg)
+![image](https://raw.githubusercontent.com/songruoningbupt/songruoningbupt.github.io/master/markdown/Feature%20Pyramid%20Networks%20for%20Object%20Detection/building-block.jpg)
 
 ## bottom-up pathway （左边部分）
 
@@ -41,7 +41,7 @@ featurizing each level有局限性：推理时间**Inference time**大幅增加�
 
 自上而下的路径通过从较高的金字塔等级上升空间粗略但在语义上更强的特征映射来幻化更高分辨率的特征。 然后通过横向连接从自下而上的路径增强这些特征。 每个横向连接合并来自自下而上路径和自上而下路径的相同空间大小的特征图。 自下而上的特征映射具有较低级别的语义，但是它的激活更准确地进行了本地化，因为它被子采样次数较少。
 
-![image](https://github.com/songruoningbupt/songruoningbupt.github.io/tree/master/markdown/Feature%20Pyramid%20Networks%20for%20Object%20Detection/building-block.jpg)
+![image](https://raw.githubusercontent.com/songruoningbupt/songruoningbupt.github.io/master/markdown/Feature%20Pyramid%20Networks%20for%20Object%20Detection/building-block.jpg)
 
 图3显示了构建我们自上而下特征映射的构建块。 使用较粗糙的分辨率特征图，我们将空间分辨率上采样2倍（为简单起见，使用最近邻居上采样）。 然后通过逐元素加法将上行映射与相应的自下而上映射（其经历1×1卷积层以减少信道维度）合并。 迭代此过程，直到生成最精细的分辨率图。 为了开始迭代，我们简单地在C5上附加1×1卷积层以产生最粗糙的分辨率图。 最后，我们在每个合并的地图上附加3×3卷积以生成最终的特征映射，这是为了减少上采样的混叠效应。 该最终特征映射集称为{P2，P3，P4，P5}，对应于分别具有相同空间大小的{C2，C3，C4，C5}。
 
